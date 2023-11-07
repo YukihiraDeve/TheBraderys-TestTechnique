@@ -9,8 +9,20 @@ const typeDefs = gql`
     inventory: Int!
   }
 
+  type Order {
+    id: ID!
+    productId: ID!
+    quantity: Int!
+  }
+
   type Query {
     products: [Product]
+    orders: [Order]
+  }
+
+  type Mutation {
+    addToCart(productId: ID!, quantity: Int!): String
+    placeOrder(productId: ID!, quantity: Int!): String
   }
 `;
 
