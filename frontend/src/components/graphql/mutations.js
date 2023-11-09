@@ -16,7 +16,6 @@ export const GET_PRODUCTS_QUERY = gql`
             id
             name
             price
-            // Ajoute d'autres champs nécessaires
         }
     }
 `;

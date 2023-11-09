@@ -1,11 +1,16 @@
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_PRODUCTS_QUERY } from '../components/graphql/mutations';
+import { GET_PRODUCTS_QUERY } from '../components/graphql/queries';
+import { CartContext } from '../components/CartContext';
 
 const ProductsPage = () => {
     const { data, loading, error } = useQuery(GET_PRODUCTS_QUERY);
     const [products, setProducts] = useState([]);
+    const { addToCart } = useContext(CartContext);
+
+    const handleAddToCart = (product) => {
+        addToCart(product);
+    };
 
     useEffect(() => {
         if (data) {
@@ -20,11 +25,12 @@ const ProductsPage = () => {
         <div>
             <h1>Produits</h1>
             <ul>
-                {products.map(product => (
-                    <li key={product.id}>
-                        {product.name} - {product.price} €
-                    </li>
-                ))}
+            {products.map(product => (
+            <li key={product.id}>
+                {product.name} - {product.price} €
+                <button onClick={() => handleAddToCart(product)}>Ajouter au Panier</button>
+            </li>
+        ))}
             </ul>
         </div>
     );
