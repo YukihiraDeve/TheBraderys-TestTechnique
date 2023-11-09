@@ -1,0 +1,83 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 46.1875rem;
+    height: 4.25rem;
+    border-radius: 2.125rem;
+    background: #EDDFC6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 0 20px;
+    margin-bottom: 13px;
+    font-family: 'Arial', sans-serif;
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;  /* Assure un espacement cohérent entre les éléments */
+    /* Autres styles de cart-item... */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-controls button {
+    width: 2.125rem;
+    height: 2.125rem;
+    border-radius: 0.375rem;
+    background: #D7C9B2;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.quantity-controls span {
+    width: 2.125rem;
+    height: 2.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border-radius: 0.375rem;
+    margin: 0 5px;  /* Arrondir les coins */
+}
+
+.quantity-controls button,
+.quantity-controls span {
+    font-size: 1rem; /* Taille de la police */
+    color: #000000; /* Couleur du texte */
+}
+
+
+.item-name {
+    flex-grow: 1; /* Permet au nom de l'article de remplir l'espace disponible */
+    margin-right: 20px; /* Espace entre le nom et les contrôles de quantité */
+    max-width: 60%; /* Limite la largeur maximale du nom */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne suivante */
+    overflow: hidden; /* Cache le texte débordant */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        width: 100%; /* Prend toute la largeur du conteneur */
+        margin-left: 0; /* Pas de marge supplémentaire */
+        margin-right: 0;
+    }
+
+    .item-name {
+        max-width: 50%; /* Réduire la largeur maximale pour les écrans plus petits */
+    }
+
+    /* Ajustements pour les boutons et la quantité si nécessaire */
+}
