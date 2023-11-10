@@ -10,16 +10,25 @@ const CartPage = () => {
 
 
     const updateQuantity = (index, newQuantity) => {
+        const item = cartItems[index];
+        console.log(item.inventory)
+        // Vérifier s'il y a suffisamment de stock
+        if (newQuantity > item.inventory) {
+            alert("Désolé, il n'y a pas assez de stock pour cet article.");
+            return;
+        }
+
         if (newQuantity < 1) {
             // Si la quantité est inférieure à 1, supprimer l'article du panier
             const newCartItems = [...cartItems];
-            newCartItems.splice(index, 1); // Supprime l'article à l'index spécifié
+            newCartItems.splice(index, 1);
             setCartItems(newCartItems);
+            console.log("newCartItems", newCartItems)
         } else {
             // Sinon, mettre à jour la quantité de l'article
             const newCartItems = [...cartItems];
             newCartItems[index] = {
-                ...newCartItems[index],
+                ...item,
                 quantity: newQuantity
             };
             setCartItems(newCartItems);
@@ -39,6 +48,8 @@ const CartPage = () => {
         updateQuantity(index, cartItems[index].quantity + 1);
     };
 
+    const isOrderable = cartItems.every((item) => item.quantity <= item.inventory);
+
     return (
         <div className="background">
             <div className="container">
@@ -50,13 +61,13 @@ const CartPage = () => {
                             <div className="quantity-controls">
                                 <button onClick={() => handleDecreaseQuantity(index)}>-</button>
                                 <span>{item.quantity}</span>
-                                <button onClick={() => handleIncreaseQuantity(index)}>+</button>
+                                <button onClick={() => handleIncreaseQuantity(index)} disabled={item.quantity >= item.inventory}>+</button>
                             </div>
                             <span className="item-price">{(item.price * item.quantity).toFixed(2)} €</span>
                         </div>
                     ))}
                 </div>
-                <button className="place-order-button">Commander</button>
+                <button className="place-order-button" disabled={!isOrderable}>Commander</button>
                 <button className="back-to-products-button" onClick={goToProductsPage}>
                     Retour aux articles
                 </button>
