@@ -11,7 +11,6 @@ const CartPage = () => {
 
     const updateQuantity = (index, newQuantity) => {
         const item = cartItems[index];
-        console.log(item.inventory)
         // Vérifier s'il y a suffisamment de stock
         if (newQuantity > item.inventory) {
             alert("Désolé, il n'y a pas assez de stock pour cet article.");
@@ -36,7 +35,11 @@ const CartPage = () => {
     };
 
     const goToProductsPage = () => {
-        navigate('/product'); // Utilise la méthode push pour naviguer vers la page des produits
+        navigate('/product');
+    };
+
+    const goToPayementPage = () => {
+        navigate('/payment');
     };
 
 
@@ -67,7 +70,7 @@ const CartPage = () => {
                         </div>
                     ))}
                 </div>
-                <button className="place-order-button" disabled={!isOrderable}>Commander</button>
+                <button className="place-order-button" disabled={!isOrderable} onClick={goToPayementPage}>Commander</button>
                 <button className="back-to-products-button" onClick={goToProductsPage}>
                     Retour aux articles
                 </button>

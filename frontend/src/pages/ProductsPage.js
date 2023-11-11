@@ -9,7 +9,6 @@ const ProductsPage = () => {
     const { addToCart } = useContext(CartContext);
 
     const handleAddToCart = (product) => {
-        console.log(product.inventory)
         addToCart(product);
     };
 
