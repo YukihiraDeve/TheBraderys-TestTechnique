@@ -11,8 +11,8 @@ function App() {
     <CartProvider>
     <Router>
       <Routes>
-        <Route path="/" element={<CartPage />} />
-        <Route path="/product" element={<ProductPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/" element={<ProductPage />} />
         <Route path="/payment" element={<PaymentPage />} />
       </Routes>
     </Router>

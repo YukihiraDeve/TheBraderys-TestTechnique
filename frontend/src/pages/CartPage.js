@@ -35,7 +35,7 @@ const CartPage = () => {
     };
 
     const goToProductsPage = () => {
-        navigate('/product');
+        navigate('/');
     };
 
     const goToPayementPage = () => {
