@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+    min-height: 100vh; 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(112deg, #FFBEF9 0%, #FCE183 47.87%, #00B2FF 100%);
+    
+}
+
+.cart-items-container {
+    max-height: calc(100% - 30%); /* Hauteur moins celle du bouton Commander */
+    overflow-y: auto; /* Permet le défilement */
+    padding-bottom: 10rem; /* Défilement uniquement si nécessaire */
+}
+
+.container{
+    width: 50.8125rem; /* Largeur fixe */
+    height: 32.4375rem; /* Hauteur fixe */
+    border-radius: 2.5rem;
+    background: #FFF2DA;
+    box-shadow: 0px 8px 9px rgba(0, 0, 0, 0.25);
+    position: relative; /* Permet de positionner absolument le bouton Commander à l'intérieur */
+    padding: 20px;
+    overflow: hidden;
+
+}
+
+.title{
+    height: 4.9375rem;
+    color: #000;
+    font-family: Roboto;
+    font-size: 2.5rem;
+    font-weight: 1000;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    
+}
+
+
+.place-order-button {
+    width: 9.25rem;
+    height: 2.1875rem;
+    color: #000;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 0.875rem;
+    font-weight: 400;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 0.875rem;
+    background: linear-gradient(94deg, #9DFC95 0%, #6DDC63 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none; 
+    cursor: pointer; 
+}
+
+.back-to-products-button {
+    position: absolute; /* Positionne le bouton en bas à l'intérieur du conteneur */
+    bottom: 20px; /* Distance du bas */
+    left: 20px; /* Distance de la gauche */
+    padding: 10px 20px; /* Padding pour le bouton */
+    border-radius: 0.875rem;
+    background: linear-gradient(94deg, rgb(230, 203, 171) 0%, #dc9c63 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    font-family: 'Roboto', sans-serif; 
+    font-size: 0.875rem;
+    cursor: pointer; /* Style du curseur en tant que pointeur */
+    /* Ajoute d'autres styles pour correspondre au design de ton application */
+}
