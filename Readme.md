@@ -1,6 +1,5 @@
 # TheBraderys-TestTechnique.git
-Une brève description de ton projet e-commerce, en expliquant son objectif et ses principales fonctionnalités.
-
+Ce projet a été développé dans le cadre d'un test technique pour le poste de développeur fullstack chez The Braderys, une entreprise dynamique et innovante dans le secteur de l'e-commerce. L'objectif principal était de créer une application de paiement complète, intégrant à la fois un frontend interactif et un backend robuste.
 ## Démarrage
 Instructions sur la façon de lancer le projet sur un ordinateur local à des fins de développement et de test.
 
