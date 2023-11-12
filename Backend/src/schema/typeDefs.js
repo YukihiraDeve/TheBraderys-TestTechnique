@@ -15,6 +15,11 @@ const typeDefs = gql`
     quantity: Int!
   }
 
+  type PaymentResult {
+    success: Boolean
+    message: String
+  }
+
   type Query {
     products: [Product]
     orders: [Order]
@@ -23,7 +28,8 @@ const typeDefs = gql`
   type Mutation {
     addToCart(productId: ID!, quantity: Int!): String
     placeOrder(productId: ID!, quantity: Int!): String
+    processPayment(name: String!, number: String!, date: String!, security: String!): PaymentResult
   }
 `;
 
-module.exports = typeDefs;
+module.exports = typeDefs
